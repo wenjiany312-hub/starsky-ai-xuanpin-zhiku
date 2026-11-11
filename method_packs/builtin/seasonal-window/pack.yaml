@@ -1,0 +1,13 @@
+id: seasonal-window
+name: 季节档期选品
+version: "1.0"
+author: 星空 amazon-seasonal-selection
+type: declarative
+description: 节日/季节品：看距旺季周数与同比，按提前 2–3 个月倒排备货；区分“旺季好卖且淡季不掉”的偏季品与纯季节赌货。
+tags: [季节, 节日, 档期, Q4]
+weights: {market_capacity: 0.20, competition: 0.20, trend: 0.35, differentiation: 0.15, margin_barrier: 0.10}
+thresholds:
+  trend: {growing_pct: 5.0, warn_decline_pct: -5.0}
+lens: |
+  用季节档期视角解读：根据距旺季周数给出倒排时间线（打样→下单→头程→入仓→广告预热），提前量按 2–3 个月；
+  判断是“偏季品”（旺季好卖、淡季不掉）还是“纯季节赌货”（淡季归零），后者必须写清楚清仓预案。窗口已过要直说。

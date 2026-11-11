@@ -1,0 +1,17 @@
+# 运行时数据、用户配置与密钥：不进仓库
+data_storage/
+config/local/
+method_packs/user/
+.env
+*.env
+
+# 依赖与构建缓存
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+*.log
+
+# 系统杂项
+.DS_Store

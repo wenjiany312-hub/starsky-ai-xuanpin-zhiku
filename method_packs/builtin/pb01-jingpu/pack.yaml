@@ -1,0 +1,19 @@
+id: pb01-jingpu
+name: 精铺多变体（PB-01）
+version: "1.0"
+author: 智库 PB-01 / 精铺打法
+type: declarative
+description: 低成本多 SKU 在长尾流量池建护城河。冲动消费价格带 $14.99–24.99、MOQ≤50、1688 现货直发、自然流量为主。
+tags: [精铺, 低客单, 多变体, 测款]
+weights: {market_capacity: 0.20, competition: 0.25, trend: 0.15, differentiation: 0.15, margin_barrier: 0.25}
+thresholds:
+  price: {avg_price_pass_min: 14.99, avg_price_warn_min: 10.0, avg_price_warn_max: 24.99}
+  supply: {moq_pass_max: 50, moq_warn_max: 200, offers_pass_min: 5, offers_warn_min: 3}
+  demand: {min_weekly_search_volume: 200, warn_weekly_search_volume: 100}
+  ad: {natural_share_pass_min: 0.30, natural_share_warn_min: 0.15}
+defaults: {check_ip: true, check_voc: false}
+knowledge_cards: [KC-JINGPU-01, KC-JINGPU-02]
+lens: |
+  用 PB-01 精铺视角解读：重点看能否用 1688 现货（采购≤¥25、到手≤$3.5）做微改款与多颜色/多规格拆分，
+  首批每个变体只发 20–30 件测款；流量靠自然位与自动广告弱打，不砸大词。退货率红线 3.5%。
+  给出建议拆分的 3–5 个变体方向（颜色/规格/组合），并说明哪个先测。

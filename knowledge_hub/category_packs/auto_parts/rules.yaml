@@ -1,0 +1,11 @@
+# 汽配选品与运营深度硬核门槛与防线规则
+# 来源依据：《汽配类关键词及广告系统搭建 v1.0》
+
+fitment_submodel_precision: "车型适配必须穿透至 Submodel/Trim 与制动系统细分（例如 2015-2020 F-150 必须明确区分 Manual Parking Brake 机械手刹与 EPB 电子手刹，严禁泛年份通配，违者退货率一票否决）"
+platform_sharing_archetype: "选品优先锚定‘高存量共享底盘平台’（如 D1414 共享于 F-150 / Expedition / Lincoln Navigator 横跨 12 年存量），摊薄模具成本并确保持续动销"
+hardware_accessories_standard: "易损件/刹车片必须全配附件五金硬件包（消音垫片 Shims + 不锈钢滑轨卡簧 Clips + 耐高温润滑脂包 Grease packet），五金不齐直接判定客诉高危"
+split_campaigns_by_vehicle: "广告投放必须按车型独立拆分 Campaign（如 SP-Ford F-150、SP-Expedition），严禁多车型混合烧词导致预算踩踏与数据失真"
+four_layer_negative_shield: "上线前必须强制预挂四层立体否定防护网络：①非适配整车品牌词组否定(toyota/honda/chevy)；②品牌内非适配车型否定(f250/super duty/explorer)；③品类混淆否定(rotors/caliper/fluid/used)；④单活动隔离否定"
+oe_fmsi_exact_strategy: "行业通用 FMSI 编号(如 D1414/D1602)与原厂 OEM 零件号必须设立独立 Exact 广告组，不挂车型否定，作为高转化基石"
+physical_foolproof_warning: "文案与主图必须做物理防呆提示（如标注‘Fits 6-Lug Wheels ONLY, Does NOT fit 8-Lug F-250’），并在主图左上角加清晰色块工业标牌区分 FRONT / REAR"
+spanish_keywords_integration: "关键词库与后台 Search Terms 必须覆盖西语修车技工高频词（pastillas de freno, frenos delanteros/traseros），收割低竞争精准红利"

@@ -1,0 +1,11 @@
+id: starsky-s1-quick
+name: 星空 S1 快速版
+version: "1.0"
+author: 星空亚马逊 Agent
+type: declarative
+description: 星空 S1 选品板块的默认口径：五维评分（市场容量/竞争/趋势/差异化/利润）+ 做/有条件做/暂缓/不做四档，阈值读取星空 s1_thresholds.yaml。
+tags: [通用, 星空S1, 默认]
+weights: {market_capacity: 0.25, competition: 0.25, trend: 0.20, differentiation: 0.20, margin_barrier: 0.10}
+lens: |
+  按星空 S1 选品板块的口径解读：先看需求是否真实且不在结构性下滑，再看评论区间法与广告效率法判断新品能否进场，
+  最后过利润线（扣广告后 ROI≥50%）。结论给“有条件做”时，必须写清楚条件是什么、7 天内如何验证。

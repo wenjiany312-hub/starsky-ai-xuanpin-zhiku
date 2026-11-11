@@ -1,0 +1,40 @@
+id: voc-reddit-lead
+name: 社媒 VOC 前导选品（三重验证）
+version: "1.0"
+author: 智库
+type: declarative
+description: 用 Reddit 前导信号（声量、痛点）提出假设，再用亚马逊需求与竞争数据裁决。声量真实且在涨 × 痛点集中 × 平台需求增长且格局未锁死，三条同时成立才算蓝海。Reddit 取数走免费存档，不占 MCP 额度。
+tags: [社媒, VOC, Reddit, 痛点, 蓝海, 前导信号]
+
+# 定档以三道门为准（声量门 / 痛点门 / 平台门），五维分数只作参照
+decision:
+  mode: voc
+
+# 权重只影响参照分：这套打法看差异化（痛点缝隙）与趋势，其次才是体量
+weights: {differentiation: 0.35, trend: 0.25, competition: 0.20, market_capacity: 0.15, margin_barrier: 0.05}
+
+thresholds:
+  voc:
+    min_mentions: 60              # 近 12 个月相关讨论下限（帖+评）
+    fail_mentions: 20             # 低于此 = 没人在聊
+    trend_pass_min: 0             # 讨论后半段 ÷ 前半段 −1（%）≥ 0 才算在涨
+    trend_fail_below: -30         # 低于此 = 退潮
+    pain_rate_pass_min: 0.20      # 痛点率（词典口径）≥ 20%；或 AI 深读最大单一痛点 ≥ 25%
+    pain_rate_warn_min: 0.12
+    top_pain_pct_pass_min: 25
+    platform_trend_pass_min: 0    # 亚马逊搜索量同比 ≥ 0%
+    platform_trend_fail_below: -10
+    platform_top3_pass_max: 0.45  # Top3 点击集中度 < 45%
+    platform_top3_fail: 0.60      # ≥ 60% 视为格局锁死
+    platform_min_weekly: 1000
+    platform_fail_weekly: 300     # 周搜 < 300：需求不走亚马逊
+
+defaults: {check_voc: true, check_ip: true}
+
+lens: |
+  按「社媒 VOC 前导选品」解读，定档只认三道门：声量门 → 痛点门 → 平台门。
+  - 社媒提出假设，平台数据裁决，顺序不能反：Reddit 声量大≠有购买力，所以平台门不过就是「不做」，写进证伪记录。
+  - 痛点要「集中且现有产品不解决」：优先引用 AI 深读里原话已核实的痛点，把痛点翻成产品改良点和 listing 卖点。
+  - 留意词汇迁移：社媒里的叫法和亚马逊搜索词可能已经不同（如 self cleaning litter box → automatic litter box），平台门数据差时先怀疑词不对。
+  - 真蓝海常在「场景×人群」的切缝里，不在大品类本身；建议把候选收窄到一个具体场景再验证。
+  - 数据只能把方向筛到几个，最后拍板看供应链、成本、资金：结论里必须提醒补售价/采购价核毛利。

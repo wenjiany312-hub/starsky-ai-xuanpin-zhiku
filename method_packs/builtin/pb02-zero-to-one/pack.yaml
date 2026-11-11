@@ -1,0 +1,15 @@
+id: pb02-zero-to-one
+name: 从 0 到 1 破局（PB-02）
+version: "1.0"
+author: 智库 PB-02
+type: declarative
+description: 冷门蓝海破局：月搜索 5000–20000、竞品评论中位数 ≤150、客单价 ≥$35、头部不被单一品牌垄断、非季节性。
+tags: [从0到1, 蓝海, 中高客单]
+weights: {market_capacity: 0.20, competition: 0.30, trend: 0.20, differentiation: 0.20, margin_barrier: 0.10}
+thresholds:
+  competition: {median_reviews_pass_max: 150, median_reviews_warn_max: 400, top3_click_share_pass_max: 0.35, top3_click_share_warn_max: 0.45}
+  price: {avg_price_pass_min: 35.0, avg_price_warn_min: 25.0, avg_price_warn_max: 400.0}
+  demand: {min_weekly_search_volume: 1150, warn_weekly_search_volume: 600}
+lens: |
+  用 PB-02 视角解读：找大卖 Listing 未做优化的信息差或场景化空白；头部若有同一品牌占 3 个以上坑位要明确指出；
+  生命周期要平稳（季节波动 ≤25%），季节性强的品要降级处理。

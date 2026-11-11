@@ -1,0 +1,22 @@
+id: dual-market-niche
+name: 双市场交叉验证选赛道
+version: "1.0"
+author: 智库
+type: declarative
+description: 红海给分母、蓝海给分子：需求在涨 + 集中度在降才算窗口；再用供给年轻、痛点集中、评论护城河反向验证。适合判断「这个赛道/意图值不值得进」。阈值来自单案例（马桶清洁，美国站 2026-10），属经验线。
+tags: [选赛道, 红海蓝海, 窗口期, 痛点定义]
+weights: {market_capacity: 0.15, competition: 0.30, trend: 0.25, differentiation: 0.25, margin_barrier: 0.05}
+thresholds:
+  competition: {top3_click_share_pass_max: 0.35, top3_click_share_warn_max: 0.50, top3_click_share_fatal: 0.70, median_reviews_pass_max: 300, median_reviews_warn_max: 1000, listing_count_pass_max: 200, listing_count_warn_max: 800, young_listing_share_pass_min: 0.20, young_listing_share_warn_min: 0.10}
+  trend: {growing_pct: 2, warn_decline_pct: -2}
+defaults: {check_ip: true, check_voc: true}
+lens: |
+  按《双市场交叉验证选赛道》解读，先判窗口，再谈产品：
+  1. 窗口 = 需求在涨 且 集中度在降，两个必须同时出现；只涨不降、只降不涨都只是「候选」。
+  2. 红海劝退线（命中 2 条以上不正面进）：前 5 品牌点击份额 >70%、平均评论 >5000、90 天新品≈0 或新品点击 <2%、平均品牌年龄 >5 年。
+  3. 蓝海四条件须同时成立：需求在涨、集中度在降、供给年轻（新品占比 ≥20%）、痛点集中（头部痛点占比 ≥40%）。
+  4. 前三痛点必须各有一个设计解，缺一条就不算证完；退货第一原因是「适配/尺寸」时，这是产品定义缺陷而非质量缺陷。
+  5. 本引擎的集中度指标是 Top3，方法原文是前 5 品牌，属代理口径，须标注「需人工复核」；红海/蓝海窗口不同（T90/T30）时只比方向，不混绝对值。
+  6. 缺趋势、缺痛点占比、缺供给年龄时写「证据不足」，不要估；差评主题只能近似退货原因，必须说明。
+  7. 案例数值（$9.88、120×、16,523）只是案例，不是通用标准。
+notes: 阈值来自单案例与运营默认值（±2% 需求死区、20% 供给年轻线、40% 痛点集中线），不是平台规则；需按类目复核。完整 SOP、证据卡与判定脚本在 学习技能汇总SKILL合辑/02-双市场交叉验证选赛道。

@@ -1,0 +1,7 @@
+# 服装选品专属门槛与红线规则
+size_tolerance: "衣长/胸围公差必须控制在 ±1.5cm 以内，必须严格按照美码(US Size)打样"
+fabric_quality: "必须具备水洗牢度 ≥ 4 级证明，缩水率 ≤ 3%，贴身衣物具备 OEKO-TEX 环保认证"
+return_rate_buffer: "默认财务模型预扣 18% ~ 22% 退货补贴"
+season_switch_window: "夏装必须在 3 月前完成首批入仓；冬装必须在 8 月底前建仓"
+color_reproduction: "实物在大货自然光下与 Listing 主图潘通色号偏差 ΔE < 1.0"
+packaging_requirement: "自封磨砂拉链袋 + 窒息安全警示标 (Suffocation Warning) 印刷"

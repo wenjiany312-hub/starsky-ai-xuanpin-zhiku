@@ -1,0 +1,19 @@
+id: kc-quant02-high-ticket
+name: 高客单蓝海 · 单位经济倒逼（KC-QUANT-02）
+version: "1.0"
+author: 智库 KC-QUANT-02
+type: declarative
+description: 主力价 ≥$49.99、周搜索 5000–20000、前 5 点击份额 <50%，并用“双 20%”成本铁律在最前端倒逼立项。
+tags: [高客单, 蓝海, 财务倒逼, 双20%]
+weights: {market_capacity: 0.20, competition: 0.25, trend: 0.15, differentiation: 0.10, margin_barrier: 0.30}
+thresholds:
+  price: {avg_price_pass_min: 49.99, avg_price_warn_min: 35.0, avg_price_warn_max: 400.0}
+  demand: {min_weekly_search_volume: 5000, warn_weekly_search_volume: 2500}
+  competition: {top3_click_share_pass_max: 0.40, top3_click_share_warn_max: 0.50}
+  margin: {gross_margin_pass_min: 45.0, gross_margin_warn_min: 38.0, gross_margin_fatal_below: 25.0}
+  unit: {landed_ratio_pass_max: 0.20, landed_ratio_warn_max: 0.22, fba_ratio_pass_max: 0.20, fba_ratio_warn_max: 0.22}
+knowledge_cards: [KC-QUANT-02, KC-QUANT-01]
+lens: |
+  用 KC-QUANT-02 视角解读：低客单（<$15）直接判为不适合本方法。按成本结构倒逼拆解：佣金 15% + 广告准备金 15% + 仓储退货 5% + 目标净利 25%，
+  剩余硬成本 ≤40%，其中（采购+头程）≤20%、FBA ≤20%，任一超标必须写出压降路径，压不下来即废弃立项。
+  毛利口径：本系统毛利未扣广告与退货，因此这里要求 ≥45% 才对应净利 25%。

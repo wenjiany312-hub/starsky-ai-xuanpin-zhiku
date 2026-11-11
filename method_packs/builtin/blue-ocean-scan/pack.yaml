@@ -1,0 +1,14 @@
+id: blue-ocean-scan
+name: 蓝海快扫
+version: "1.0"
+author: 智库
+type: declarative
+description: 偏宽松的需求门槛 + 偏严格的竞争门槛：头部松散、新链接占比高、低评论新品也能卖动，适合批量初筛方向。
+tags: [蓝海, 初筛, 批量]
+weights: {market_capacity: 0.15, competition: 0.35, trend: 0.20, differentiation: 0.20, margin_barrier: 0.10}
+thresholds:
+  competition: {top3_click_share_pass_max: 0.30, top3_click_share_warn_max: 0.40, young_listing_share_pass_min: 0.40, young_listing_share_warn_min: 0.25, review_band_pass_min: 20.0, review_band_warn_min: 12.0}
+  demand: {min_weekly_search_volume: 200, warn_weekly_search_volume: 100}
+defaults: {check_ip: false, check_voc: false}
+lens: |
+  这是初筛口径：只回答“这个方向值不值得进入下一轮深挖”。不展开成本细节，重点说明竞争松散的证据和需要深挖时优先补哪些数据。
