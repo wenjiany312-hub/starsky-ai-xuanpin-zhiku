@@ -515,6 +515,31 @@ def _voc_lead_method():
     assert docs and len(docs) >= 50, f"应匹配到本地语料样本，实际={fname}"
 
 
+@check("VOC 品类扫描：随包带品类词典，扫描收尾能把状态改成完成 / 失败")
+def _voc_scan_status():
+    from app.service import voc_service
+
+    # 1. 品类词典跟着包走：没有它，品类扫描一发起就报「没有产品词典」
+    cats = {c["id"]: c for c in voc_service.load_categories()}
+    assert voc_service.GENERAL_ID in cats, "缺兜底品类配置 config/voc_categories/general-us.json"
+    assert any(c.get("products") for c in cats.values()), "没有任何带产品词典的品类配置，品类扫描无法发起"
+
+    # 2. 收尾写状态：以前形参和关键字重名，扫描跑完状态永远停在「运行中」
+    old = voc_service.VOC_DIR
+    with tempfile.TemporaryDirectory() as tmp:
+        voc_service.VOC_DIR = Path(tmp)
+        try:
+            st = {"scan_id": "VOC-SMOKE", "status": "running", "progress": 0, "log": []}
+            voc_service._upd("VOC-SMOKE", st, "完成", 100, status="done")
+            saved = voc_service.get_scan("VOC-SMOKE")
+            assert saved and saved["status"] == "done" and saved["progress"] == 100, saved
+            voc_service._upd("VOC-SMOKE", st, "失败", 70, status="failed", error="x")
+            saved = voc_service.get_scan("VOC-SMOKE")
+            assert saved["status"] == "failed" and saved["error"] == "x", saved
+        finally:
+            voc_service.VOC_DIR = old
+
+
 def main() -> int:
     failed = 0
     for name, fn in CHECKS:

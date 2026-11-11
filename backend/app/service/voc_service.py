@@ -392,10 +392,11 @@ def start_scan(category_id: str, months: Optional[int] = None, subreddits: Optio
     return status
 
 
-def _upd(scan_id: str, status: Dict[str, Any], stage: str, progress: int, **kw: Any) -> None:
-    status.update(stage=stage, progress=progress, updated_at=_now(), **kw)
-    status["log"] = (status.get("log") or [])[-30:] + [f"{_now()[11:]} {stage}"]
-    write_json(_scan_dir(scan_id) / "status.json", status)
+def _upd(scan_id: str, st: Dict[str, Any], stage: str, progress: int, **kw: Any) -> None:
+    # 形参不能叫 status：收尾时要用 status="done" / "failed" 关键字改状态，重名会直接 TypeError
+    st.update(stage=stage, progress=progress, updated_at=_now(), **kw)
+    st["log"] = (st.get("log") or [])[-30:] + [f"{_now()[11:]} {stage}"]
+    write_json(_scan_dir(scan_id) / "status.json", st)
 
 
 async def _run_scan(scan_id: str, cat: Dict[str, Any], status: Dict[str, Any]) -> None:

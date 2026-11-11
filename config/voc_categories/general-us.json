@@ -1,0 +1,12 @@
+{
+  "id": "general-us",
+  "name": "通用购物讨论 · 美国站（兜底）",
+  "description": "没有匹配的品类配置时的兜底版块。信号偏弱（版块不聚焦），只用于粗判；建议为你的品类新增专用配置。",
+  "market": "US",
+  "match": [],
+  "subreddits": ["BuyItForLife", "Frugal", "amazon", "HomeImprovement", "smarthome"],
+  "products": {},
+  "months": 6,
+  "post_cap_per_month": 100,
+  "comment_cap_per_month": 200
+}

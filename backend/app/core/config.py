@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     用户在界面里改的设置（模型 Key、角色模型、数据源开关）不在这里，见 settings_store.py。
     """
     APP_NAME: str = "AI 选品智库"
-    APP_VERSION: str = "3.0.0"
+    APP_VERSION: str = "3.0.1"
     API_V1_PREFIX: str = "/api/v1"
     DEBUG: bool = False
     SERVER_HOST: str = "127.0.0.1"

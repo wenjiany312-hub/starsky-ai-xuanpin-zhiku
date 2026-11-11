@@ -1,0 +1,33 @@
+{
+  "id": "pet-us",
+  "name": "宠物 · 美国站",
+  "description": "朋友的宠物美国站实战配置：垂类大版块 + 场景版块 + 品类版块混配。",
+  "market": "US",
+  "match": ["dog", "cat", "pet", "puppy", "kitten", "litter", "leash", "collar", "harness", "kennel", "crate", "treat", "chew", "feeder", "aquarium"],
+  "subreddits": ["dogs", "cats", "puppy101", "reactivedogs", "DogFood", "CatAdvice", "dogtraining", "Pets"],
+  "products": {
+    "litter_box":   {"zh": "猫砂盆",     "keyword": "automatic litter box", "regex": "litter ?box|litter ?robot|litter ?pan"},
+    "cat_litter":   {"zh": "猫砂",       "keyword": "cat litter",           "regex": "cat litter|clumping litter|tofu litter"},
+    "cat_tree":     {"zh": "猫爬架",     "keyword": "cat tree",             "regex": "cat tree|cat tower|scratching post|scratcher"},
+    "food_topper":  {"zh": "拌饭/冻干",  "keyword": "dog food topper",      "regex": "food topper|freeze[- ]?dried|picky eater|kibble topper|meal topper"},
+    "water_fountain": {"zh": "饮水机",   "keyword": "pet water fountain",   "regex": "water fountain|water dispenser"},
+    "auto_feeder":  {"zh": "自动喂食器", "keyword": "automatic pet feeder", "regex": "automatic feeder|auto feeder|timed feeder"},
+    "slow_feeder":  {"zh": "慢食碗/益智", "keyword": "slow feeder bowl",    "regex": "slow feeder|puzzle feeder|lick ?mat|snuffle mat"},
+    "harness":      {"zh": "胸背带",     "keyword": "no pull dog harness",  "regex": "harness"},
+    "leash":        {"zh": "牵引绳",     "keyword": "dog leash",            "regex": "\\bleash(es)?\\b|retractable leash"},
+    "collar":       {"zh": "项圈",       "keyword": "dog collar",           "regex": "\\bcollar(s)?\\b|gps collar|e-?collar"},
+    "crate_kennel": {"zh": "笼子/围栏",  "keyword": "dog crate",            "regex": "\\bcrate(s)?\\b|kennel|playpen"},
+    "carrier_car":  {"zh": "外出包/车载", "keyword": "dog car seat",        "regex": "pet carrier|car seat|seat cover|travel carrier"},
+    "pet_gate":     {"zh": "宠物门栏",   "keyword": "cat gate",             "regex": "pet gate|baby gate|dog gate|cat gate"},
+    "pet_bed":      {"zh": "宠物床",     "keyword": "orthopedic dog bed",   "regex": "dog bed|cat bed|orthopedic bed|calming bed"},
+    "calming":      {"zh": "镇静安抚",   "keyword": "dog calming aid",      "regex": "calming (chew|treat|collar|spray|diffuser)|pheromone|thundershirt|anxiety"},
+    "dental":       {"zh": "口腔护理",   "keyword": "dog dental chews",     "regex": "dental (chew|treat|stick)|toothbrush|water additive|tartar"},
+    "toys_chew":    {"zh": "耐咬玩具",   "keyword": "tough dog chew toy",   "regex": "chew toy|indestructible|kong|tough toy|destroys? (every )?toy"},
+    "grooming":     {"zh": "美容梳理",   "keyword": "dog grooming brush",   "regex": "deshedding|grooming|slicker brush|clipper|nail grinder|undercoat"},
+    "flea_tick":    {"zh": "驱虫",       "keyword": "flea and tick treatment", "regex": "flea|tick (prevention|treatment|collar)|heartworm"},
+    "poop_bags":    {"zh": "拾便袋",     "keyword": "dog poop bags",        "regex": "poop bag|waste bag"}
+  },
+  "months": 6,
+  "post_cap_per_month": 120,
+  "comment_cap_per_month": 240
+}
